@@ -1,5 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const cors = require('cors');
 const app = express();
 
 // Database Connection
@@ -13,6 +14,7 @@ mongoose.connect('mongodb+srv://oliver:s0803940@notenest.dyihuvj.mongodb.net/?re
 })
 
 // Middleware for parsing JSON
+app.use(cors());
 app.use(express.json());
 
 // Routes
